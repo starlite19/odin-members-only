@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Join</title>
+  <link rel="stylesheet" href="/form.css">
+</head>
+
+<body>
+  <h2>Join the Club</h2>
+  <%- include("errors.ejs") %>
+  <div>Enter the secret code to gain membership status!</div>
+  <form action="/join" method="POST">
+    <div class="info-item">
+      <label for="secret">Secret Code:</label>
+      <input type="text" name="secret" id="secret" required>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Join</button>
+      <a href="/" class="navigation">Back to home</a>
+    </div>
+  </form>
+</body>
+
+</html>
