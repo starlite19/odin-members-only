@@ -10,12 +10,16 @@
   <% if (user) { %>
   <h1>Welcome back, <%= user.first_name %> </h1>
   <div class="actions">
+    <a href="/create/message" class="button">Create a new message</a>
     <% if (user.status_id !== 2) { %>
-      <a href="/join" class="button">Join the Club</a>
+    <a href="/join" class="button">Join the Club</a>
     <% } %>
     <a href="/logout" class="button">Log out</a>
   </div>
-  
+  <h2>Community Messages</h2>
+  <% messages.forEach( message => { %>
+  <%- include('item', {message: message, status_id: user.status_id}); %>
+  <% }); %>
   <% } else { %>
   <h1>Welcome to Clubhouse</h1>
   <div class="actions">

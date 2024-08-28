@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title><%= backpack.name %> - <%= company.name %></title>
-  <link rel="stylesheet" href="/item.css">
-</head>
-
-<body>
-  <h1><%= company.name %> - <%= backpack.name %></h1>
-  <div class="list">
-    <div class="item">Name: <%= backpack.name %></div>
-    <div class="item">Brand: <%= company.name %></div>
-    <div class="item">Designed in: <%= company.country %></div>
-    <div class="item">Type: <%= type %></div>
-    <div class="item">Volume: <%= backpack.volume %> L</div>
-    <a href="/" class="navigation">Back to backpacks</a>
+<div class="message">
+  <div class="header">
+    <div class="left">
+      <%= message.title %>
+    </div>
+    <% if (status_id == 2) { %>
+    <div class="right">
+      <div class="name"><%= message.user.first_name %> <%= message.user.last_name %> - </div>
+      <div class="time"><%= message.time %></div>
+    </div>
+    <% } %>
   </div>
-</body>
-
-</html>
+  <div><%= message.text %></div>
+</div>

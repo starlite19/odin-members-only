@@ -9,4 +9,6 @@ createRouter.post(
   createController.createUser
 );
 
+createRouter.get("/message", createController.getMessageForm);
+
 module.exports = createRouter;

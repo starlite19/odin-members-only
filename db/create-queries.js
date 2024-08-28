@@ -9,6 +9,15 @@ async function insertUser(first, last, pass, email) {
   );
 }
 
+async function insertMessage(user_id, title, text) {
+  await pool.query(
+    "INSERT INTO messages (user_id, title, time, text)" +
+      "VALUES ($1, $2, CURRENT_TIMESTAMP(), $3)",
+    [user_id, title, text]
+  );
+}
+
 module.exports = {
   insertUser,
+  insertMessage,
 };

@@ -64,8 +64,21 @@ async function createUser(req, res) {
   res.redirect("/");
 }
 
+async function getMessageForm(req, res) {
+  res.render("new-message-form");
+}
+
+async function createMessage(req, res) {
+  const user = req.user;
+  const { title, message } = req.body;
+  await create_db.createMessage(user.id, title, message);
+  res.redirect("/");
+}
+
 module.exports = {
   getUserForm,
   validateUser,
   createUser,
+  getMessageForm,
+  createMessage,
 };

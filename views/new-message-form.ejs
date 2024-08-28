@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Create Message</title>
+  <link rel="stylesheet" href="/form.css">
+</head>
+
+<body>
+  <h2>New Message</h2>
+  <%- include("errors.ejs") %>
+  <form action="/create/message" method="POST">
+
+    <div class="info-item">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" required>
+    </div>
+
+    <div class="info-item">
+      <label for="message">Message:</label>
+      <textarea name="message" id="message" rows="4" cols="40" required></textarea>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Create</button>
+      <a href="/" class="navigation">Back to home</a>
+    </div>
+  </form>
+</body>
+
+</html>
