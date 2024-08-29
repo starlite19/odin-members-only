@@ -1,7 +1,5 @@
 const read_db = require("../db/read-queries");
 const create_db = require("../db/create-queries");
-const update_db = require("../db/update-queries");
-const delete_db = require("../db/delete-queries");
 const bcrypt = require("bcryptjs");
 
 const { body, validationResult } = require("express-validator");
@@ -60,7 +58,6 @@ async function createUser(req, res) {
     // otherwise, store hashedPassword in DB
     await create_db.insertUser(firstName, lastName, hashedPassword, email);
   });
-  // console.log(firstName, lastName, email, password, confirmPassword);
   res.redirect("/");
 }
 
@@ -71,7 +68,7 @@ async function getMessageForm(req, res) {
 async function createMessage(req, res) {
   const user = req.user;
   const { title, message } = req.body;
-  await create_db.createMessage(user.id, title, message);
+  await create_db.insertMessage(user.id, title, message);
   res.redirect("/");
 }
 

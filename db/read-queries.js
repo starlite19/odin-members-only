@@ -22,9 +22,11 @@ async function getAllMessages() {
 }
 
 async function getUsersByIds(userIds) {
-  const { rows } = await pool.query("SELECT * FROM users WHERE id IN ($1)", [
-    userIds,
-  ]);
+  const placeholders = userIds.map((_, i) => `$${i + 1}`).join(", ");
+  const { rows } = await pool.query(
+    `SELECT * FROM users WHERE id IN (${placeholders})`,
+    userIds
+  );
   return rows;
 }
 

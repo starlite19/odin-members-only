@@ -50,9 +50,7 @@ a {
     text-decoration: none;
 }
 
-ul {
-    list-style-type: none;
-    color:#373839;
+
+.text {
     margin-bottom: 16px;
-    padding: 0;
 }

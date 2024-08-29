@@ -3,12 +3,15 @@
     <div class="left">
       <%= message.title %>
     </div>
-    <% if (status_id == 2) { %>
+    <% if (status_id >= 2) { %>
     <div class="right">
       <div class="name"><%= message.user.first_name %> <%= message.user.last_name %> - </div>
       <div class="time"><%= message.time %></div>
+      <% if (status_id == 3) { %>
+      <a href="/delete/<%= message.id %>"><img src="/trash-can.svg" class="delete"></a>
+      <% } %>
     </div>
     <% } %>
   </div>
-  <div><%= message.text %></div>
+  <div class="message-text"><%= message.text %></div>
 </div>

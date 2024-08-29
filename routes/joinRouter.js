@@ -9,7 +9,17 @@ joinRouter.get("/", (req, res) => {
 joinRouter.post(
   "/",
   statusController.validateMemberCode(),
-  statusController.updateStatus
+  statusController.updateMember
+);
+
+joinRouter.get("/admin", (req, res) => {
+  res.render("admin");
+});
+
+joinRouter.post(
+  "/admin",
+  statusController.validateAdminCode(),
+  statusController.updateAdmin
 );
 
 module.exports = joinRouter;

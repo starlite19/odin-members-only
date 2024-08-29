@@ -2,12 +2,19 @@
     border: 1px solid #8DAAA0;
     border-radius: 8px;
     padding: 16px;
-    width: 100px;
     background-color: #8DAAA0;
     color: #F2EBE6;
 }
 
-.categories {
+.small-width {
+    width: 100px;
+}
+
+.large-width {
+    width: 150px; 
+}
+
+.messages {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,6 +26,9 @@ body {
     text-align: center;
     padding: 8px;
     background-color: #F2EBE6;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 a {
@@ -27,4 +37,12 @@ a {
 
 h1, h2 {
     color: #373839;
+}
+
+.actions {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
 }

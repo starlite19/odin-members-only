@@ -10,7 +10,8 @@ CREATE TABLE IF NOT EXISTS status (
 INSERT INTO status (name) 
 VALUES
   ('Non-member'),
-  ('Member');
+  ('Member')
+  ('Admin');
 
 CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
