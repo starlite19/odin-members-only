@@ -25,3 +25,10 @@ Missing Features:
 - Cannot delete account
 - No option to view only your own messages
 - Cannot remove/downgrade status
+
+<details>
+<summary>SECRET CODES for testing purposes:</summary>
+
+- Member: MICKEYMOUSE
+- Admin: MMCLUBHOUSE
+</details>
