@@ -1,4 +1,5 @@
 const { Client } = require("pg");
+require("dotenv").config();
 
 const SQL = `
 CREATE TABLE IF NOT EXISTS status (
@@ -10,7 +11,7 @@ CREATE TABLE IF NOT EXISTS status (
 INSERT INTO status (name) 
 VALUES
   ('Non-member'),
-  ('Member')
+  ('Member'),
   ('Admin');
 
 CREATE TABLE IF NOT EXISTS users (
@@ -38,11 +39,13 @@ async function main() {
   console.log("seeding...");
   const client = new Client({
     host: process.env.HOST,
-    user: process.env.USER,
+    username: process.env.USER,
     database: process.env.DATABASE,
     password: process.env.PASSWORD,
     port: process.env.DB_PORT,
-    ssl: true,
+    ssl: {
+      require: true,
+    },
   });
   await client.connect();
   await client.query(SQL);
