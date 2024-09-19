@@ -1,5 +1,5 @@
-# ODIN Inventory Application
-Project deployed on https://odin-inventory-mb5u.onrender.com
+# ODIN Members Only Application
+Project deployed on https://odin-members-only-2myp.onrender.com
 
 - Note that it may take a while to load because the application is asleep
 
@@ -18,3 +18,10 @@ Functionality:
 - Members can see the author and date on messages
 - Users can become an admin by entering a secret passcode (upgraded to admin status)
 - Admin can see author and date on messages AND delete messages
+- Log out
+
+Missing Features:
+- No hints on secret codes
+- Cannot delete account
+- No option to view only your own messages
+- Cannot remove/downgrade status
